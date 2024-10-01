@@ -19,10 +19,12 @@ const Assessment: React.FC = () => {
     const fetchQuestions = async () => {
       console.log("fetching...");
       try {
-        const response = await axios.get("/api/questions");
+        const response = await axios.get("/api/questionss");
         console.log(response.data, "response");
         const questions: Question[] = await response.data;
+
         setQuestionsData(questions);
+        console.log(questions, "questions");
         setUserAnswers(Array(questions.length).fill(""));
         setLoading(false);
       } catch (error) {
@@ -65,7 +67,7 @@ const Assessment: React.FC = () => {
   }
 
   return (
-    <Container className="mt-4">
+    <Container className="mt-4 w-screen h-[90vh] bg-blue-50">
       <h2>Exam Assessment</h2>
       <ProgressBar
         now={((currentQuestionIndex + 1) / questionsData.length) * 100}
@@ -79,6 +81,7 @@ const Assessment: React.FC = () => {
           setAnswer={setAnswer}
         />
       )}
+
       <div className="text-center">
         <Button
           variant="primary"
