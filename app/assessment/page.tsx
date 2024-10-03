@@ -13,6 +13,8 @@ const Assessment: React.FC = () => {
   const [questionsData, setQuestionsData] = useState<Question[]>([]);
   const [loading, setLoading] = useState(true);
   const router = useRouter();
+  const [timeRemaining, setTimeRemaining] = useState(60 * 10);
+  const [timerRunning, setTimerRunning] = useState(false);
 
   useEffect(() => {
     // Fetch questions from the API
@@ -22,7 +24,9 @@ const Assessment: React.FC = () => {
         const response = await axios.get("/api/questions");
         console.log(response.data, "response");
         const questions: Question[] = await response.data;
+
         setQuestionsData(questions);
+        console.log(questions, "questions");
         setUserAnswers(Array(questions.length).fill(""));
         setLoading(false);
       } catch (error) {
@@ -32,6 +36,18 @@ const Assessment: React.FC = () => {
     };
     fetchQuestions();
   }, []);
+
+  useEffect(() => {
+    if (timerRunning && timeRemaining > 0) {
+      const timer = setTimeout(() => {
+        setTimeRemaining((prevTime) => prevTime - 1);
+      }, 1000);
+      return () => clearTimeout(timer);
+    } else if (timeRemaining <= 0) {
+      setTimerRunning(false);
+      router.push("/assessment/result");
+    }
+  }, [timeRemaining, timerRunning, router]);
 
   const setAnswer = (index: number, answer: string) => {
     const updatedAnswers = [...userAnswers];
@@ -65,12 +81,22 @@ const Assessment: React.FC = () => {
   }
 
   return (
-    <Container className="mt-4">
-      <h2>Exam Assessment</h2>
+    <Container className="mt-4 w-screen h-[90vh] bg-blue-50">
+      <div className="flex justify-between items-center px-4 py-4">
+        <h2 className="text-2xl">Exam Assessment</h2>
+
+        <div className="w-28 bg-blue-700 flex items-center justify-center px-1">
+          <p className="text-xl font-bold text-white text-center">
+            {`Timer: ${timeRemaining}s`}
+          </p>
+        </div>
+      </div>
       <ProgressBar
+        className=""
         now={((currentQuestionIndex + 1) / questionsData.length) * 100}
         label={`${currentQuestionIndex + 1}/${questionsData.length}`}
       />
+
       {questionsData.length > 0 && (
         <QuestionCard
           question={questionsData[currentQuestionIndex]}
@@ -79,6 +105,7 @@ const Assessment: React.FC = () => {
           setAnswer={setAnswer}
         />
       )}
+
       <div className="text-center">
         <Button
           variant="primary"
