@@ -6,14 +6,14 @@ const Navbar: React.FC = () => {
   return (
     <div className="bg-blue-700 py-2 px-4 ">
       <div className="flex justify-between items-center">
-        <p className="text-white font-bold text-xl"> EXAM PRACTICE</p>
-        {/* <Image
+        <p className="text-white font-bold text-xl"> EXAM</p>
+        <Image
           src={profile}
           alt="profile"
-          width={50}
-          height={50}
+          width={30}
+          height={30}
           className="rounded-full"
-        /> */}
+        />
       </div>
     </div>
   );
