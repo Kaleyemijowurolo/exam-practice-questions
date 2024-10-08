@@ -30,7 +30,7 @@ const Result: React.FC = () => {
   ).length;
 
   return (
-    <Container className="mt-4 text-center">
+    <Container className=" text-center">
       <h1>Assessment Result</h1>
       <h3>
         Your Score: {score} / {assessmentResult.correctAnswers.length}
