@@ -1,6 +1,4 @@
-import Image from "next/image";
 import React from "react";
-import profile from "../public/alex.jpg";
 import Link from "next/link";
 
 const Navbar: React.FC = () => {
@@ -17,13 +15,6 @@ const Navbar: React.FC = () => {
         >
           Add Question
         </Link>
-        <Image
-          src={profile}
-          alt="profile"
-          width={30}
-          height={30}
-          className="rounded-full"
-        />
       </div>
     </div>
   );
