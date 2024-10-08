@@ -8,7 +8,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  // await connect(); // Ensure the database is connected
+  await connect(); // Ensure the database is connected
 
   if (req.method === "GET") {
     try {
