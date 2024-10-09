@@ -106,9 +106,9 @@ import { Container, Button } from "react-bootstrap";
 
 const Home: React.FC = () => {
   return (
-    <main className="flex flex-col items-center justify-center min-h-[92vh]">
+    <main className="flex flex-col items-center justify-center min-h-[88vh] bg-blue-50">
       <Container className="text-center shadow-sm py-2 ">
-        <h1 className="py-2 text-3xl font-bold">
+        <h1 className="py-2 text-4xl md:text-3xl font-bold">
           Welcome to the Exam Practice App
         </h1>
         <p className="text-lg pb-2">
@@ -116,7 +116,7 @@ const Home: React.FC = () => {
         </p>
         <Link href="/assessment" className="mt-4">
           <Button variant="primary" size="lg">
-            Start Assessment
+            Start Exam
           </Button>
         </Link>
       </Container>

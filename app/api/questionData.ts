@@ -1,0 +1,496 @@
+type Question = {
+  text: string;
+  options: string[];
+  correctAnswer: string;
+};
+
+export const questions: Question[] = [
+  {
+    text: "What is the smallest unit of information in digital systems?",
+    options: ["Bit", "Byte", "Nibble", "Word"],
+    correctAnswer: "Bit",
+  },
+  {
+    text: "What are the five units that comprise the Von Neumann architecture?",
+    options: [
+      "Memory, Control Unit, ALU, Bus System, I/O Unit",
+      "CPU, RAM, Hard Disk, Monitor, Keyboard",
+      "Database, Application Server, Web Server, Client, Middleware",
+      "Router, Switch, Firewall, Gateway, Proxy",
+    ],
+    correctAnswer: "Memory, Control Unit, ALU, Bus System, I/O Unit",
+  },
+  {
+    text: "Define the concept of a 'Distributed System'.",
+    options: [
+      "A software system that operates on a single computer",
+      "A system where data is stored in different locations",
+      "A software system that operates using several computers connected via a network",
+      "A system that is completely isolated from other systems",
+    ],
+    correctAnswer:
+      "A software system that operates using several computers connected via a network",
+  },
+  {
+    text: "What is the primary function of the control unit in the Von Neumann architecture?",
+    options: [
+      "Coordinates CPU, interprets commands, controls data flow",
+      "Stores data and instructions",
+      "Performs arithmetic and logical operations",
+      "Manages input and output operations",
+    ],
+    correctAnswer: "Coordinates CPU, interprets commands, controls data flow",
+  },
+  {
+    text: "Name and describe three types of enterprise information systems.",
+    options: [
+      "Communication Systems, Cross-sectional Systems, Management Information Systems",
+      "CRM, ERP, SCM",
+      "HR Systems, Financial Systems, Production Systems",
+      "Operating Systems, Database Systems, Networking Systems",
+    ],
+    correctAnswer:
+      "Communication Systems, Cross-sectional Systems, Management Information Systems",
+  },
+  {
+    text: "What are the primary characteristics of enterprise software systems?",
+    options: [
+      "Complexity, multi-user support, multi-device compatibility",
+      "User-friendliness, Single-user support, Simplistic design",
+      "Open-source, Cross-platform, Single-language support",
+      "Low-cost, Small-scale, Minimal documentation",
+    ],
+    correctAnswer: "Complexity, multi-user support, multi-device compatibility",
+  },
+  {
+    text: "Name three typical risks in software development projects.",
+    options: [
+      "Unrealizable requirements, Over-budget costs, Unresolved conflicts",
+      "Lack of coding skills, Miscommunication, Too many developers",
+      "Unethical practices, Low salary, Poor management",
+      "Lack of internet, Inability to test, Single-user issues",
+    ],
+    correctAnswer:
+      "Unrealizable requirements, Over-budget costs, Unresolved conflicts",
+  },
+  {
+    text: "What is the key challenge associated with 'Economic Uncertainty' in software projects?",
+    options: [
+      "Exact project costs cannot be estimated until completion",
+      "Projects tend to have too many developers",
+      "Lack of communication tools in the project",
+      "Developers don't work on weekends",
+    ],
+    correctAnswer: "Exact project costs cannot be estimated until completion",
+  },
+  {
+    text: "Describe 'Analysis Paralysis' in software projects.",
+    options: [
+      "Excessive analysis prevents decision-making",
+      "Team members don’t communicate",
+      "Managers are unable to analyze project requirements",
+      "Analysis tools are incompatible with project software",
+    ],
+    correctAnswer: "Excessive analysis prevents decision-making",
+  },
+  {
+    text: "What is 'Technology-centricity' and its risk in software development?",
+    options: [
+      "Focus on new technologies over user needs, leading to project failure",
+      "Focus on outdated technologies",
+      "Using technology for small-scale projects only",
+      "Ignoring stakeholder needs for technological trends",
+    ],
+    correctAnswer:
+      "Focus on new technologies over user needs, leading to project failure",
+  },
+  {
+    text: "List the five phases of the software life cycle.",
+    options: [
+      "Planning, Development, Operation, Maintenance, Shutdown",
+      "Design, Coding, Testing, Integration, Deployment",
+      "Initiation, Execution, Monitoring, Evaluation, Closure",
+      "Analysis, Design, Implementation, Verification, Maintenance",
+    ],
+    correctAnswer: "Planning, Development, Operation, Maintenance, Shutdown",
+  },
+  {
+    text: "What are the core activities during the planning phase of the software life cycle?",
+    options: [
+      "Determining needs, Make-or-buy decision, Procurement",
+      "Documentation, Testing, Verification",
+      "Coding, Unit testing, Refactoring",
+      "Bug-fixing, User Training, System Integration",
+    ],
+    correctAnswer: "Determining needs, Make-or-buy decision, Procurement",
+  },
+  {
+    text: "Define 'Make-or-Buy' decision in software planning.",
+    options: [
+      "Decision to develop new software or purchase existing software",
+      "Decision to hire new developers or train existing staff",
+      "Decision to use proprietary or open-source software",
+      "Decision to host software on-premises or in the cloud",
+    ],
+    correctAnswer:
+      "Decision to develop new software or purchase existing software",
+  },
+  {
+    text: "What is software maintenance?",
+    options: [
+      "All activities for error correction and software evolution after deployment",
+      "Documenting software features for end-users",
+      "Creating a backup plan for the system",
+      "Testing software modules during development",
+    ],
+    correctAnswer:
+      "All activities for error correction and software evolution after deployment",
+  },
+  {
+    text: "What happens during the 'Shutdown' phase?",
+    options: [
+      "Software is decommissioned, and its functions are replaced or retired",
+      "Software is upgraded to a newer version",
+      "User training is completed",
+      "System architecture is revised and optimized",
+    ],
+    correctAnswer:
+      "Software is decommissioned, and its functions are replaced or retired",
+  },
+  {
+    text: "What is requirements engineering (RE)?",
+    options: [
+      "Process of determining, documenting, and maintaining system functions and properties",
+      "Testing the software against requirements",
+      "Creating user documentation for the system",
+      "Managing software changes during the life cycle",
+    ],
+    correctAnswer:
+      "Process of determining, documenting, and maintaining system functions and properties",
+  },
+  {
+    text: "Name the four main activities in Requirements Engineering.",
+    options: [
+      "Elicitation, Documentation, Validation, Management",
+      "Design, Testing, Validation, Deployment",
+      "Coding, Reviewing, Integrating, Deploying",
+      "Monitoring, Analyzing, Refactoring, Upgrading",
+    ],
+    correctAnswer: "Elicitation, Documentation, Validation, Management",
+  },
+  {
+    text: "What is the purpose of requirements validation?",
+    options: [
+      "Ensuring documented requirements meet stakeholder needs",
+      "Designing the system based on requirements",
+      "Managing software architecture",
+      "Coding requirements into the software",
+    ],
+    correctAnswer: "Ensuring documented requirements meet stakeholder needs",
+  },
+  {
+    text: "Explain the role of a specification in software development.",
+    options: [
+      "A document outlining technical requirements for implementation",
+      "A document defining test cases",
+      "The final report of a project",
+      "A document stating project funding sources",
+    ],
+    correctAnswer:
+      "A document outlining technical requirements for implementation",
+  },
+  {
+    text: "What is the difference between a 'business rule' and a 'business function'?",
+    options: [
+      "Business rule defines conditions, while business function describes tasks",
+      "Business rule describes software constraints, while business function details user interaction",
+      "Business rule explains user behavior, while business function represents use cases",
+      "Business rule is a testing phase, while business function is a coding stage",
+    ],
+    correctAnswer:
+      "Business rule defines conditions, while business function describes tasks",
+  },
+  {
+    text: "What is the core purpose of software architecture?",
+    options: [
+      "To define the structure of a software system, ensuring it meets business and technical requirements",
+      "To code the main application logic",
+      "To maintain system security and access control",
+      "To provide a testing strategy for the software",
+    ],
+    correctAnswer:
+      "To define the structure of a software system, ensuring it meets business and technical requirements",
+  },
+  {
+    text: "Name three types of architecture documentation.",
+    options: [
+      "Business Architecture, Software Architecture, IT Enterprise Architecture",
+      "Data Architecture, Hardware Architecture, Cloud Architecture",
+      "User Manual, Test Cases, Source Code",
+      "Deployment Architecture, Backup Architecture, Archive Architecture",
+    ],
+    correctAnswer:
+      "Business Architecture, Software Architecture, IT Enterprise Architecture",
+  },
+  {
+    text: "What is a 'UML Use Case Diagram'?",
+    options: [
+      "A graphical representation showing system interactions with actors",
+      "A diagram depicting class hierarchies",
+      "A flowchart for business processes",
+      "A deployment diagram for system infrastructure",
+    ],
+    correctAnswer:
+      "A graphical representation showing system interactions with actors",
+  },
+  {
+    text: "Describe the role of software architects.",
+    options: [
+      "Architects define system structure, ensure alignment with requirements, and make critical design decisions",
+      "Architects code the main features",
+      "Architects perform system testing",
+      "Architects manage the development team",
+    ],
+    correctAnswer:
+      "Architects define system structure, ensure alignment with requirements, and make critical design decisions",
+  },
+  {
+    text: "What are the three main activities in architecture definition?",
+    options: [
+      "Analyzing stakeholder needs, designing architecture, documenting the design",
+      "Coding, Testing, Maintenance",
+      "Data Analysis, Data Mining, Data Reporting",
+      "Project Planning, Project Execution, Project Closure",
+    ],
+    correctAnswer:
+      "Analyzing stakeholder needs, designing architecture, documenting the design",
+  },
+  {
+    text: "What is a unit test?",
+    options: [
+      "A test that verifies the smallest part of an application (e.g., a function or class) performs as expected",
+      "A test that checks user interface functionality",
+      "A test that validates hardware components",
+      "A test that ensures the entire system works as expected",
+    ],
+    correctAnswer:
+      "A test that verifies the smallest part of an application (e.g., a function or class) performs as expected",
+  },
+
+  {
+    text: "What is the difference between system tests and acceptance tests?",
+    options: [
+      "System tests validate overall system behavior, while acceptance tests ensure client requirements are met",
+      "System tests check individual components, while acceptance tests check for bugs",
+      "System tests focus on non-functional requirements, while acceptance tests focus on performance",
+      "System tests are internal, while acceptance tests are external",
+    ],
+    correctAnswer:
+      "System tests validate overall system behavior, while acceptance tests ensure client requirements are met",
+  },
+  {
+    text: "What is meant by 'Continuous Integration'?",
+    options: [
+      "Frequent merging of code changes into a shared repository",
+      "Integrating user feedback into project requirements",
+      "Creating new components for existing software",
+      "Documenting the integration of third-party libraries",
+    ],
+    correctAnswer: "Frequent merging of code changes into a shared repository",
+  },
+  {
+    text: "Name and explain two types of quality management.",
+    options: [
+      "Constructive Quality Management: Avoid errors through good practices. Analytical Quality Management: Test and validate artifacts after creation",
+      "Functional Quality Management: Focus on code. Non-functional Quality Management: Focus on security",
+      "Preventive Quality Management: Detect errors. Corrective Quality Management: Fix errors",
+      "Technical Quality Management: For hardware. Operational Quality Management: For processes",
+    ],
+    correctAnswer:
+      "Constructive Quality Management: Avoid errors through good practices. Analytical Quality Management: Test and validate artifacts after creation",
+  },
+  {
+    text: "Define the term 'DevOps'.",
+    options: [
+      "An approach integrating development and operations for continuous delivery and faster deployment",
+      "A software testing framework",
+      "A project management methodology",
+      "A programming language",
+    ],
+    correctAnswer:
+      "An approach integrating development and operations for continuous delivery and faster deployment",
+  },
+  {
+    text: "What is a role-based approach in software engineering?",
+    options: [
+      "It defines responsibilities, activities, and tasks for different roles in software projects",
+      "It focuses on developing software for specific industries",
+      "It categorizes software based on functionality",
+      "It implements security controls for different roles in the company",
+    ],
+    correctAnswer:
+      "It defines responsibilities, activities, and tasks for different roles in software projects",
+  },
+  {
+    text: "Name three typical roles in a software engineering project.",
+    options: [
+      "Developer, Tester, Project Manager",
+      "CEO, CFO, COO",
+      "Marketing Manager, HR, Administrator",
+      "Lawyer, Accountant, Doctor",
+    ],
+    correctAnswer: "Developer, Tester, Project Manager",
+  },
+  {
+    text: "What is the primary responsibility of a software tester?",
+    options: [
+      "To ensure the software meets the specified requirements and is free of bugs",
+      "To design the system architecture",
+      "To document user requirements",
+      "To manage the development team",
+    ],
+    correctAnswer:
+      "To ensure the software meets the specified requirements and is free of bugs",
+  },
+  {
+    text: "Describe the role of a business analyst.",
+    options: [
+      "Elicits and documents business requirements, and ensures they are well understood by the development team",
+      "Manages the financial aspects of the project",
+      "Handles recruitment and training",
+      "Ensures the software is free of bugs",
+    ],
+    correctAnswer:
+      "Elicits and documents business requirements, and ensures they are well understood by the development team",
+  },
+  {
+    text: "What is the role of a product owner in Agile projects?",
+    options: [
+      "Prioritizes product features, defines user stories, and ensures the development team is building the right product",
+      "Manages the coding and testing",
+      "Creates the company’s marketing plan",
+      "Documents the technical specifications for the system",
+    ],
+    correctAnswer:
+      "Prioritizes product features, defines user stories, and ensures the development team is building the right product",
+  },
+  {
+    text: "Who is responsible for defining and maintaining the software architecture?",
+    options: [
+      "The Software Architect",
+      "The Business Analyst",
+      "The Project Manager",
+      "The Scrum Master",
+    ],
+    correctAnswer: "The Software Architect",
+  },
+  {
+    text: "What is the role of a project manager in software development?",
+    options: [
+      "To plan, execute, and close projects while ensuring they meet time, cost, and scope constraints",
+      "To write code and create test cases",
+      "To design the database schema",
+      "To ensure all employees have access to the software",
+    ],
+    correctAnswer:
+      "To plan, execute, and close projects while ensuring they meet time, cost, and scope constraints",
+  },
+  {
+    text: "Explain the role of a Scrum Master.",
+    options: [
+      "Facilitates Agile practices, removes obstacles, and ensures team productivity",
+      "Manages the marketing and sales efforts",
+      "Creates technical documentation for the project",
+      "Handles system testing and bug fixing",
+    ],
+    correctAnswer:
+      "Facilitates Agile practices, removes obstacles, and ensures team productivity",
+  },
+  {
+    text: "What does a configuration manager do?",
+    options: [
+      "Manages software versions, tracks changes, and maintains the integrity of the project repository",
+      "Creates new features for the software",
+      "Handles customer support and training",
+      "Manages marketing and advertising efforts",
+    ],
+    correctAnswer:
+      "Manages software versions, tracks changes, and maintains the integrity of the project repository",
+  },
+  {
+    text: "Name a typical challenge for role-based software project organization.",
+    options: [
+      "Conflict of interest between roles, such as developers prioritizing speed over quality",
+      "Lack of internet access",
+      "Difficulty in writing code",
+      "High employee turnover",
+    ],
+    correctAnswer:
+      "Conflict of interest between roles, such as developers prioritizing speed over quality",
+  },
+  {
+    text: "What is a software process?",
+    options: [
+      "A structured set of activities required to develop a software system",
+      "A document outlining technical requirements",
+      "The process of testing individual components",
+      "A project planning methodology",
+    ],
+    correctAnswer:
+      "A structured set of activities required to develop a software system",
+  },
+  {
+    text: "Name two common process paradigms in software engineering.",
+    options: [
+      "Waterfall and Agile",
+      "Scrum and Kanban",
+      "XP and RAD",
+      "Lean and Six Sigma",
+    ],
+    correctAnswer: "Waterfall and Agile",
+  },
+  {
+    text: "What is the purpose of a software process model?",
+    options: [
+      "To provide a framework for planning, structuring, and controlling software development",
+      "To create a user manual for the software",
+      "To design the system architecture",
+      "To document the testing results",
+    ],
+    correctAnswer:
+      "To provide a framework for planning, structuring, and controlling software development",
+  },
+  {
+    text: "Describe the Waterfall model.",
+    options: [
+      "A linear sequential process model with distinct phases such as requirements, design, implementation, testing, and maintenance",
+      "An iterative model focusing on early testing and continuous integration",
+      "A model for organizing code into distinct modules",
+      "A model for managing configuration changes in software",
+    ],
+    correctAnswer:
+      "A linear sequential process model with distinct phases such as requirements, design, implementation, testing, and maintenance",
+  },
+  {
+    text: "What is the key advantage of the Agile model over Waterfall?",
+    options: [
+      "Flexibility to adapt to changing requirements through iterative development",
+      "Low-cost development",
+      "Quick software deployment",
+      "Faster testing",
+    ],
+    correctAnswer:
+      "Flexibility to adapt to changing requirements through iterative development",
+  },
+  {
+    text: "Define the term 'Scrum'.",
+    options: [
+      "An Agile framework that divides work into sprints and uses roles like Scrum Master, Product Owner, and Development Team",
+      "A software testing methodology",
+      "A tool for managing project budgets",
+      "A database management system",
+    ],
+    correctAnswer:
+      "An Agile framework that divides work into sprints and uses roles like Scrum Master, Product Owner, and Development Team",
+  },
+];
