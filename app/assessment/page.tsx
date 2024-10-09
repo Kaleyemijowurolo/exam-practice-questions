@@ -1,3 +1,4 @@
+// export default Assessment;
 "use client";
 import { useEffect, useState } from "react";
 import { questions } from "../api/questionData"; // Your question data
@@ -59,7 +60,7 @@ const AllQuestions: React.FC = () => {
       "correctAnswers",
       JSON.stringify(questions.map((q) => q.correctAnswer))
     );
-    setShowResult(true);
+    // setShowResult(true);
   };
 
   const currentQuestion = questions[currentQuestionIndex];
