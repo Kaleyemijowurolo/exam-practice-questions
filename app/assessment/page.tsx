@@ -33,7 +33,6 @@ const AllQuestions: React.FC = () => {
   const [userAnswers, setUserAnswers] = useState<string[]>(
     Array(questions.length).fill("")
   );
-  const [showResult, setShowResult] = useState(false); // Track if result is shown
 
   const handleNext = () => {
     if (currentQuestionIndex < questions.length - 1) {
@@ -60,7 +59,6 @@ const AllQuestions: React.FC = () => {
       "correctAnswers",
       JSON.stringify(questions.map((q) => q.correctAnswer))
     );
-    // setShowResult(true);
   };
 
   const currentQuestion = questions[currentQuestionIndex];
