@@ -1,40 +1,51 @@
 "use client";
 import React from "react";
+import { useEffect } from "react";
 import { Container, Button, Table } from "react-bootstrap";
 import Link from "next/link";
-import { AssessmentResult } from "../types/types";
 
 const Result: React.FC = () => {
-  const [userAnswers, setUserAnswers] = React.useState<string | null>(null);
-  const [correctAnswers, setCorrectAnswers] = React.useState<string | null>(
+  const [userAnswers, setUserAnswers] = React.useState<string[] | null>(null);
+  const [correctAnswers, setCorrectAnswers] = React.useState<string[] | null>(
     null
   );
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (typeof window !== "undefined") {
-      setUserAnswers(sessionStorage.getItem("userAnswers"));
-      setCorrectAnswers(sessionStorage.getItem("correctAnswers"));
+      const storedUserAnswers = sessionStorage.getItem("userAnswers");
+      const storedCorrectAnswers = sessionStorage.getItem("correctAnswers");
+
+      setUserAnswers(storedUserAnswers ? JSON.parse(storedUserAnswers) : null);
+      setCorrectAnswers(
+        storedCorrectAnswers ? JSON.parse(storedCorrectAnswers) : null
+      );
     }
   }, []);
 
   if (!userAnswers || !correctAnswers) return <div>Loading...</div>;
 
-  // Use AssessmentResult type to structure the data
-  const assessmentResult: AssessmentResult = {
-    userAnswers: JSON.parse(userAnswers as string),
-    correctAnswers: JSON.parse(correctAnswers as string),
-  };
-
-  const score = assessmentResult.userAnswers.filter(
-    (answer, index) => answer === assessmentResult.correctAnswers[index]
+  const score = userAnswers.filter(
+    (answer, index) => answer === correctAnswers[index]
   ).length;
 
   return (
-    <Container className=" text-center">
-      <h1>Assessment Result</h1>
-      <h3>
-        Your Score: {score} / {assessmentResult.correctAnswers.length}
+    <Container className="text-center">
+      <h1 className="py-2 text-2xl">Exam Result</h1>
+      <h3 className="text-3xl">
+        Your Score: {score} / {correctAnswers.length}
       </h3>
+
+      {score >= correctAnswers.length / 2 ? (
+        <p className="text-green-500">
+          Congratulations! You passed the assessment.
+        </p>
+      ) : (
+        <p className="text-red-500 py-2">
+          {" "}
+          You failed the assessment. Please try again.
+        </p>
+      )}
+
       <Table bordered>
         <thead>
           <tr>
@@ -44,17 +55,17 @@ const Result: React.FC = () => {
           </tr>
         </thead>
         <tbody>
-          {assessmentResult.userAnswers.map((answer, index) => (
+          {userAnswers.map((answer, index) => (
             <tr key={index}>
               <td>Question {index + 1}</td>
               <td>{answer || "Not Answered"}</td>
-              <td>{assessmentResult.correctAnswers[index]}</td>
+              <td>{correctAnswers[index]}</td>
             </tr>
           ))}
         </tbody>
       </Table>
       <Link href="/assessment">
-        <Button variant="primary">Retake Assessment</Button>
+        <Button variant="primary">Retake Exam</Button>
       </Link>
     </Container>
   );

@@ -45,7 +45,7 @@ const QuestionForm: React.FC = () => {
   };
 
   return (
-    <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-md">
+    <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-md min-h-[88vh]">
       <h2 className="text-2xl font-bold mb-6">Post Exam Question</h2>
       <form onSubmit={handleSubmit}>
         {/* Question Input */}
